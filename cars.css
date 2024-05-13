@@ -1,0 +1,16 @@
+.paddingLeft {
+    padding-left: 2em;
+}
+
+.carTable {
+    border: 2px solid black;
+}
+
+.tableRow th {
+    border: 2px solid black;
+}
+
+.tableBody td {
+    background-color: lightgray;
+    border: 2px solid black;
+}
