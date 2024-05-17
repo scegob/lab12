@@ -1,37 +1,26 @@
-// Define the function calcCircleGeometries
 function calcCircleGeometries(radius) {
-  // Calculate the area, circumference, and diameter
+  // Calculate circle properties
   var area = Math.PI * radius * radius;
   var circumference = 2 * Math.PI * radius;
   var diameter = 2 * radius;
 
-  // Return the array containing the calculated values
+  // Return an array containing the calculated values
   return [area, circumference, diameter];
 }
 
-// Array of radius values to test
-var radiusValues = [5, 8, 10];
+function calculateGeometry() {
+  // Get the radius input value
+  var radius = parseFloat(document.getElementById("radius").value);
 
-// Get the div to display results
-var resultsDiv = document.getElementById("results");
+  // Calculate circle properties
+  var results = calcCircleGeometries(radius);
+  var area = document.getElementById("area");
+  var circ = document.getElementById("circumference");
+  var dia = document.getElementById("diameter");
 
-// Loop through each radius value and display the results
-radiusValues.forEach(function (radius) {
-  // Calculate geometries for the current radius
-  var geometries = calcCircleGeometries(radius);
+  area.textContent = results[0].toFixed(2);
+  circ.textContent = results[1].toFixed(2);
+  dia.textContent = results[2].toFixed(2);
 
-  // Create a paragraph element to display the results
-  var paragraph = document.createElement("p");
-  paragraph.textContent =
-    "Radius: " +
-    radius +
-    ", Area: " +
-    geometries[0] +
-    ",<br> Circumference: " +
-    geometries[1] +
-    ",<br> Diameter: " +
-    geometries[2];
-
-  // Append the paragraph to the results div
-  resultsDiv.appendChild(paragraph);
-});
+  return false;
+}
