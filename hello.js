@@ -1,6 +1,8 @@
-function handleSubmit() {
+// Function to handle form submission
+function handleSubmit(event) {
+  event.preventDefault(); // Prevent the form from submitting traditionally
+
   var usernameInput = document.getElementById("username");
-  var greetingDiv = document.getElementById("hi");
   var passwordInput = document.getElementById("password");
 
   if (!usernameInput || !passwordInput) {
@@ -11,10 +13,10 @@ function handleSubmit() {
   // Access value
   var username = usernameInput.value;
   var password = passwordInput.value;
-  greetingDiv.textContent = "Hi, " + username;
 
-  // Log values
-  console.log("Username:", username);
-  console.log("Password:", password);
-  return false;
+  // Log values to the console
+  console.log("Hi, " + username + ". Here is your password: " + password);
 }
+
+// Attach the handleSubmit function to the form's submit event
+document.getElementById("login-form").addEventListener("submit", handleSubmit);
